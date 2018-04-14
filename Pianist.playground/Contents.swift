@@ -85,11 +85,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func setupImages() {
-        arrow = UIImageView(image: UIImage(named: "images/arrow"))
+        arrow = UIImageView(image: UIImage(named: "Images/arrow"))
         arrow.frame = CGRect(x: 250, y: 50, width: 120, height: 120)
         view.addSubview(arrow)
         
-        welcome = UIImageView(image: UIImage(named: "images/welcome"))
+        welcome = UIImageView(image: UIImage(named: "Images/welcome"))
         welcome.frame = CGRect(x: 104, y: 335, width: 160, height: 60)
         view.addSubview(welcome)
         
@@ -281,7 +281,7 @@ class Key: UIView {
         self.isActive = true
         
         // play sound for key (sound files are fixed length for performance sake)
-        let soundPath = Bundle.main.path(forResource: "key\(self.id)", ofType: "wav", inDirectory: "sounds")!
+        let soundPath = Bundle.main.path(forResource: "key\(self.id)", ofType: "wav", inDirectory: "Sounds")!
         let soundURL = URL(fileURLWithPath: soundPath)
         Sound.play(url: soundURL)
         
@@ -657,7 +657,7 @@ class Menu: UIView {
     }
     
     func setupSong() -> Bool {
-        if let songFile = Bundle.main.path(forResource: vc.selectedSong, ofType: "txt", inDirectory: "songs") {
+        if let songFile = Bundle.main.path(forResource: vc.selectedSong, ofType: "txt", inDirectory: "Songs") {
             do {
                 // only play if no other song is playing
                 guard vc.currentSong == nil else { return false }
